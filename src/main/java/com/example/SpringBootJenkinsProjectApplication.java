@@ -14,7 +14,7 @@ public class SpringBootJenkinsProjectApplication {
 
 	 @GetMapping("/hello")
 	    public List<String> hello() {
-	        return Arrays.asList("shubham","ramesh");
+	        return Arrays.asList("shubham","ramesh","amit");
 	    }
 	
 	public static void main(String[] args) {
