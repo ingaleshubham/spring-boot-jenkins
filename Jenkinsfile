@@ -33,8 +33,8 @@ pipeline {
       		     del /Q "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%.war"
         		 copy /Y "%WORKSPACE%\\target\\%WAR_NAME%" "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
         		 D:
-        		 cd %TOMCAT_HOME%\\bin
-            	 call startup.bat
+        		 echo Starting Tomcat...
+            	 call "%TOMCAT_HOME%\\bin\\startup.bat"
                  """
                  
             }
