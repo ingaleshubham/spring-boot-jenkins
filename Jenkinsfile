@@ -29,10 +29,10 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 bat """
-                del /Q "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
-                del /Q "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%.war"
-                copy /Y "target\\%WAR_NAME%" "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
-                """
+       			 del /Q "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
+      		     del /Q "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%.war"
+        		 copy /Y "%WORKSPACE%\\target\\%WAR_NAME%" "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
+                 """
             }
         }
     }
