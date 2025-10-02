@@ -35,7 +35,7 @@ pipeline {
         		 copy /Y "%WORKSPACE%\\target\\%WAR_NAME%" "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
         		 D:
         		 echo Starting Tomcat...
-            	 call "%CATALINA_HOME%\\bin\\startup.bat"
+            	 call "%CATALINA_HOME%\\bin\\catalina.bat" run
                  """
                  
             }
