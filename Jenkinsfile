@@ -11,6 +11,7 @@ pipeline {
         TOMCAT_HOME = 'D:\\Software\\apache-tomcat-10.1.46-windows-x64\\apache-tomcat-10.1.46'
         WAR_NAME    = 'spring-boot-jenkins-project-0.0.1-SNAPSHOT.war'
         DEPLOY_NAME = 'springapp.war'
+        CATALINA_HOME = 'D:\\Software\\apache-tomcat-10.1.46-windows-x64\\apache-tomcat-10.1.46'
     }
 
     stages {
@@ -34,7 +35,7 @@ pipeline {
         		 copy /Y "%WORKSPACE%\\target\\%WAR_NAME%" "%TOMCAT_HOME%\\webapps\\%DEPLOY_NAME%"
         		 D:
         		 echo Starting Tomcat...
-            	 call "%TOMCAT_HOME%\\bin\\startup.bat"
+            	 call "%CATALINA_HOME%\\bin\\startup.bat"
                  """
                  
             }
