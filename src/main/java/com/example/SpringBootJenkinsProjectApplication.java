@@ -18,6 +18,11 @@ public class SpringBootJenkinsProjectApplication extends SpringBootServletInitia
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(SpringBootJenkinsProjectApplication.class);
     }
+	
+	@GetMapping("/jenkins")
+	public String test() {
+		return "this is jenkins project for demo";
+	}
 
 	@GetMapping("/hello")
 	public List<String> hello() {
